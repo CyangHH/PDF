@@ -1,7 +1,9 @@
 # 前端生成pdf文件之pdfmake.js
 pdfmake.js是一个简单的生成pdf文件的插件。
 
-pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js
+pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js  
+
+参考：https://www.cnblogs.com/pheye/p/5661933.html
 
 
 ## pdfmake的基本使用方法  
@@ -22,7 +24,7 @@ pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js
     pdfMake.createPdf(dd).download();
     </script>
 ```
-##插入图片  
+## 插入图片  
 
 在插入图片方面，jsPDF要求先将图片转换成Data URL才行，而pdfmake允许直接指定路径，看起来是很方便，但这是有条件的，必须是以node.js作为服务器，或者将图片放到vfs_fonts.js中，所以总的来说，用处不大，还是一样得将图片转换成Data URL形式才行。
 
