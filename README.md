@@ -3,11 +3,13 @@ pdfmake.js是一个简单的生成pdf文件的插件。
 
 pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js
 
-__pdfmake的基本使用方法__  
+
+## pdfmake的基本使用方法  
 1.包含以下两个文件  
     <script src="build/pdfmake.min.js"></script>  
     <script src="build/vfs_fonts.js"></script>  
 2.在JS代码中声明一个Document-definition对象，这个是pdfmake自己的术语。简单点说，就是创建一个至少包含content属性的对象。然后就可以调用pdfMake的方法导出PDF，具体见如下代码：
+```JS
     <script type="text/javascript">
     //创建Document-definition对象 
     var dd = {
@@ -19,14 +21,17 @@ __pdfmake的基本使用方法__
     //导出PDF
     pdfMake.createPdf(dd).download();
     </script>
-####插入图片
+```
+##插入图片  
+
 在插入图片方面，jsPDF要求先将图片转换成Data URL才行，而pdfmake允许直接指定路径，看起来是很方便，但这是有条件的，必须是以node.js作为服务器，或者将图片放到vfs_fonts.js中，所以总的来说，用处不大，还是一样得将图片转换成Data URL形式才行。
 
 为解决此问题，我写了一个ImageDataURL的函数对象，可同时传入多个图片地址。在图片都加载完成后，ImageDataURL.oncomplete将被触发，在回调中通过this.imgdata取出各个图片的Data URL，根据pdfmake的要求组织下，就可正确生成pdf了。
 
 ImageDataURL的原理是通过H5的canvas标签，将图片绘制在canvas上，然后通过canvas的toDataURL得到图像的Data URL。使用时请注意浏览器兼容性问题。
 
-以下为将sampleImage.jpg, sampleage.jpg, sampleImage.jpg依次写入PDF的例子，测试时sampleage.jpg不存在，PDF直接忽略。
+以下为将sampleImage.jpg, sampleage.jpg, sampleImage.jpg依次写入PDF的例子，测试时sampleage.jpg不存在，PDF直接忽略。  
+```HTML
     <!DOCTYPE html>
     <html lang="zh-CN">
         <head>
@@ -123,3 +128,4 @@ ImageDataURL的原理是通过H5的canvas标签，将图片绘制在canvas上，
         </script>
         </body>
     </html>
+```
