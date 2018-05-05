@@ -8,8 +8,10 @@ pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js
 
 ## pdfmake的基本使用方法  
 1.包含以下两个文件  
+```JS
     <script src="build/pdfmake.min.js"></script>  
     <script src="build/vfs_fonts.js"></script>  
+```
 2.在JS代码中声明一个Document-definition对象，这个是pdfmake自己的术语。简单点说，就是创建一个至少包含content属性的对象。然后就可以调用pdfMake的方法导出PDF，具体见如下代码：
 ```JS
     <script type="text/javascript">
