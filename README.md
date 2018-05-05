@@ -11,11 +11,11 @@ pdfmake.js     https://files.cnblogs.com/files/s313139232/pdfmake.min.js
     <script type="text/javascript">
     //创建Document-definition对象 
     var dd = {
-                content: [
-                'One paragraph',
-                'Another paragraph, this time a little bit longer to make  sure, this line will be divided into at least two lines'
-                ]
-            };
+    content: [
+    'One paragraph',
+    'Another paragraph, this time a little bit longer to make  sure, this line will be divided into at least two lines'
+    ]
+    };
     //导出PDF
     pdfMake.createPdf(dd).download();
     </script>
