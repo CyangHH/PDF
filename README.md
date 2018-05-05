@@ -1,9 +1,9 @@
 # 前端生成pdf文件之pdfmake.js
 pdfmake.js是一个简单的生成pdf文件的插件。
 
-pdfmake.js     https://files.cnblogs.com/files/s313139232/pdfmake.min.js
+pdfmake.js https://files.cnblogs.com/files/s313139232/pdfmake.min.js
 
-####pdfmake的基本使用方法
+__pdfmake的基本使用方法__
 1.包含以下两个文件
     <script src="build/pdfmake.min.js"></script>
     <script src="build/vfs_fonts.js"></script>
